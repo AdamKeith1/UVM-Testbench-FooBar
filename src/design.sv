@@ -40,9 +40,9 @@ module weird #(parameter BITS = 4) (
         nxt_foo_nand_bar = foo_nand_bar;
     
         if (en) begin
-            nxt_foo_and_bar  = foo & bar;
-            nxt_foo_or_bar   = foo | bar;
-            nxt_foo_xor_bar  = foo ^ bar;
+            nxt_foo_and_bar  =   foo & bar;
+            nxt_foo_or_bar   =   foo | bar;
+            nxt_foo_xor_bar  =   foo ^ bar;
             nxt_foo_nand_bar = ~(foo & bar);
         end
     end

@@ -1,3 +1,4 @@
+// --- Reset Packet --- //
 class weird_base_sequence extends uvm_sequence;
   `uvm_object_utils(weird_base_sequence)
   
@@ -6,13 +7,14 @@ class weird_base_sequence extends uvm_sequence;
   // --- Constructor --- //
   function new(string name= "weird_base_sequence");
     super.new(name);
-    `uvm_info("BASE_SEQ", "Inside Constructor!", UVM_HIGH)
+    `uvm_info("BASE_SEQ", "Inside Constructor", UVM_HIGH)
   endfunction
   
   // --- Body Task --- //
   task body();
-    `uvm_info("BASE_SEQ", "Inside body task!", UVM_HIGH)
+    `uvm_info("BASE_SEQ", "Inside body task", UVM_HIGH)
     
+    // --- Randomize With Reset --- //
     reset_pkt = weird_sequence_item::type_id::create("reset_pkt");
     start_item(reset_pkt);
     reset_pkt.randomize() with {n_rst==0;};
@@ -22,7 +24,7 @@ class weird_base_sequence extends uvm_sequence;
   
 endclass: weird_base_sequence
 
-
+// --- Normal Packet --- //
 class weird_test_sequence extends weird_base_sequence;
   `uvm_object_utils(weird_test_sequence)
   
@@ -31,16 +33,17 @@ class weird_test_sequence extends weird_base_sequence;
   // --- Constructor --- //
   function new(string name= "weird_test_sequence");
     super.new(name);
-    `uvm_info("TEST_SEQ", "Inside Constructor!", UVM_HIGH)
+    `uvm_info("TEST_SEQ", "Inside Constructor", UVM_HIGH)
   endfunction
   
   // --- Body Task --- //
   task body();
-    `uvm_info("TEST_SEQ", "Inside body task!", UVM_HIGH)
+    `uvm_info("TEST_SEQ", "Inside body task", UVM_HIGH)
     
+    // --- Randomize --- //
     item = weird_sequence_item::type_id::create("item");
     start_item(item);
-    item.randomize() with {n_rst==1;};
+    item.randomize();
     finish_item(item);
         
   endtask: body
