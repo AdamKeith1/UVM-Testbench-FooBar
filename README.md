@@ -7,6 +7,7 @@ What's next...
  - covergroups
  - parameterize the interface and DUT instance
  - make this readme better
+ - fix the waveform image
 
 Small testbench (at least relative to UVM testbenches) so just ran on EDA Playgorund. Try it yourself with setting below...
 
@@ -18,4 +19,4 @@ Small testbench (at least relative to UVM testbenches) so just ran on EDA Playgo
 
 Here's a snippet of the wave trace file...
 
- ![alt text](image.png)
+<img src="image.png" width="1400" height="275"/>
