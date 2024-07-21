@@ -19,4 +19,4 @@ Small testbench (at least relative to UVM testbenches) so just ran on EDA Playgo
 
 Here's a snippet of the wave trace file...
 
-<img src="image.png" width="1400" height="275"/>
+<img src="waves/waves.png" width="1400" height="275"/>
